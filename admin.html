@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Админка</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Админка</h1>
+
+<div id="admin-orders"></div>
+
+<script>
+async function loadAdmin(){
+  const res = await fetch('/admin-orders')
+  const data = await res.json()
+
+  const container = document.getElementById("admin-orders")
+
+  data.forEach(o=>{
+    container.innerHTML += `
+      <div class="card">
+        #${o.id} — ${o.status} — ${o.amount} TON
+      </div>
+    `
+  })
+}
+
+loadAdmin()
+</script>
+
+</body>
+</html>

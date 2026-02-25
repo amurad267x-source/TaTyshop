@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Каталог</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">TaTyshop</div>
+  <div class="nav" id="nav"></div>
+</div>
+
+<div style="padding:40px">
+  <h1>Каталог</h1>
+  <div id="products"></div>
+</div>
+
+<script>
+fetch('/me').then(r=>{
+  if(!r.ok) location.href="/"
+})
+</script>
+
+</body>
+</html>

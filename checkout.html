@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Оформление заказа</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+  <script src="/app.js" defer></script>
+</head>
+<body onload="initTon()">
+
+<h1>Оформление заказа</h1>
+
+<div class="checkout">
+
+  <div class="left">
+
+    <div class="card">
+      <h3>Способ оплаты</h3>
+      <div id="ton-connect"></div>
+    </div>
+
+    <div class="card">
+      <h3>Получатель</h3>
+      <input placeholder="ФИО"><br><br>
+      <input placeholder="Email"><br><br>
+      <input placeholder="Домашний адрес">
+    </div>
+
+  </div>
+
+  <div class="right card">
+    <h2>Ваш заказ</h2>
+    <div id="cart-items"></div>
+    <h2>Итого: <span id="total"></span></h2>
+    <button onclick="payOrder()">Оплатить</button>
+  </div>
+
+</div>
+<script>
+fetch('/me')
+  .then(r => {
+    if(!r.ok) location.href = "/"
+  })
+</script>
+<script>
+fetch('/me')
+  .then(r => r.json())
+  .then(user => {
+    if(!user.full_name || !user.address){
+      alert("Заполните профиль перед покупкой")
+      location.href = "/account.html"
+    }
+  })
+</script>
+
+</body>
+</html>

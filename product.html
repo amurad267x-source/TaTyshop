@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Товар</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <a href="/catalog.html">← Назад</a>
+</header>
+
+<div class="card">
+  <h2>Название товара</h2>
+  <p>Описание товара</p>
+  <p>Цена: 10 TON</p>
+</div>
+
+<h3>Отзывы</h3>
+<div id="vk_comments"></div>
+
+<script src="https://vk.com/js/api/openapi.js?169"></script>
+<script>
+VK.init({apiId: 54432952});
+VK.Widgets.Comments("vk_comments", {limit: 10});
+</script>
+
+</body>
+</html>
