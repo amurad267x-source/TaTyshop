@@ -7,8 +7,8 @@ export async function onRequest({ env }) {
       redirect_uri: env.GOOGLE_REDIRECT_URI.trim(),
       response_type: "code",
       scope: "openid email profile",
-      access_type: "offline",
-      prompt: "consent"
+      access_type: "online",
+      prompt: "select_account"
     });
 
   return Response.redirect(googleUrl, 302);
