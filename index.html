@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+  <meta charset="UTF-8" />
   <title>TaTyshop</title>
-  <link rel="stylesheet" href="/style.css">
-  <script defer src="/app.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="header">
+<header class="header">
   <div class="logo">TaTyshop</div>
-  <div class="nav" id="nav"></div>
-</div>
+  <div class="actions">
+    <button class="btn">Войти</button>
+    <button class="btn">Корзина</button>
+  </div>
+</header>
 
-<div style="padding:60px;text-align:center">
-  <h1>Магазин переводных татуировок</h1>
-  <p>Авторизуйтесь для покупок</p>
-  <a href="/login">
-    <button class="btn-primary">Войти через Google</button>
-  </a>
-</div>
+<main>
+  <h1 class="title">Магазин переводных татуировок</h1>
+  <div id="products" class="products"></div>
+</main>
 
+<script src="app.js"></script>
 </body>
 </html>
